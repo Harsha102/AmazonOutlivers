@@ -4,7 +4,7 @@ A survival game as a part of the IGD course project using some of the  AI techni
 To run the game download demo.exe along with Demo Data folder and UnityPlayer.dll
 
 
-#Team members
+## Team members
 
 
 Adha Ranjith Kumar (15CS30002)
