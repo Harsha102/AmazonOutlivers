@@ -54,19 +54,19 @@ function Update()
 
 function lookAt()
 {
-	transform.LookAt(Target);
+	transform.LookAt(Target);  //directly used LookAt function to align itself to target
 }
 
 function attack()
 {
 	
 	var p : Vector3;
-	p = (Target.position - transform.position);
-	p.Normalize();
-	p = ( p * attackSpeed * Time.deltaTime);
-	p.y = 0;
-	transform.LookAt(Target);
-	transform.Translate(p);
+	p = (Target.position - transform.position);   //getting seek position   
+	p.Normalize();             //making it unit vector
+	p = ( p * attackSpeed * Time.deltaTime);    
+	p.y = 0;                      //restricting upward movement
+	transform.LookAt(Target);   //Align itself to target
+	transform.Translate(p);      //Translate function makes the animal to move along p
 }
 
 function wander()
