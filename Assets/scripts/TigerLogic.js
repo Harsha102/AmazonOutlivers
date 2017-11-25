@@ -59,7 +59,7 @@ function lookAt()
 
 function attack()
 {
-	// lookAt();
+	
 	var p : Vector3;
 	p = (Target.position - transform.position);
 	p.Normalize();
@@ -70,22 +70,22 @@ function attack()
 }
 
 function wander()
-{	
+{	//wanderTime is the time after which it changes its direction.we have used it to ensure smooth movement 
 	if (timer >= wanderTimer) {
-		randDir = Random.insideUnitSphere;
-		randDir.x = 0.0;
-		randDir.z = 0.0;
-		randDir.y=-(randDir.y);
+		randDir = Random.insideUnitSphere;   //gives random point on sphere
+		randDir.x = 0.0;                     
+		randDir.z = 0.0;                     //putting required coordinates to zero to prevent upward movement
+		randDir.y=-(randDir.y);              
 		timer = 0.0;
 	}
 	if (timer >= wanderTimer - 10*Time.deltaTime)
-		transform.Rotate(randDir * 10);
+		transform.Rotate(randDir * 10);      //rotating the animal in that random direction
 	;
 	else {
 		var p : Vector3;
 		p = (Vector3.forward * wanderSpeed * Time.deltaTime);
 		p.y = 0;
-		transform.Translate(p);
+		transform.Translate(p);               //translating animal in that direction
 	}
-		// transform.Translate(Vector3.forward * wanderSpeed * Time.deltaTime);
+		
 }
